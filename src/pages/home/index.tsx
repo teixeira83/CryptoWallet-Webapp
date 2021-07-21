@@ -1,10 +1,11 @@
 import React from 'react';
-import { NavBar, BalanceAccountContainer } from '../../components';
+import { NavBar, BalanceAccountContainer, Market } from '../../components';
 
 const Home: React.FC = () => (
   <>
     <NavBar />
     <BalanceAccountContainer />
+    <Market />
   </>
 );
 
