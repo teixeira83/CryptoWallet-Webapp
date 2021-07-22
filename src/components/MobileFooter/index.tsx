@@ -7,10 +7,14 @@ import {
   MonetizationOn,
   AccountBalanceWallet,
 } from '@material-ui/icons';
+import { Link, withRouter } from 'react-router-dom';
 
 const useStyles = makeStyles({
   footerStyle: {
     background: '#292D3B',
+    width: '100%',
+    position: 'fixed',
+    bottom: 0,
   },
   iconStyle: {
     color: 'white',
@@ -22,13 +26,15 @@ const MobileFooter: React.FC = () => {
 
   return (
     <BottomNavigation className={classes.footerStyle}>
-      <BottomNavigationAction
-        label="Home"
-        value="home"
-        icon={<Home />}
-        showLabel
-        className={classes.iconStyle}
-      />
+      <Link to="/">
+        <BottomNavigationAction
+          label="Home"
+          value="home"
+          icon={<Home />}
+          showLabel
+          className={classes.iconStyle}
+        />
+      </Link>
       <BottomNavigationAction
         label="Market"
         value="market"
@@ -54,4 +60,4 @@ const MobileFooter: React.FC = () => {
   );
 };
 
-export default MobileFooter;
+export default withRouter(MobileFooter);

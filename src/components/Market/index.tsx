@@ -57,6 +57,9 @@ const useStyles = makeStyles({
     width: '95%',
     margin: '10px auto',
   },
+  tableContainer: {
+    marginBottom: '80px',
+  },
 });
 
 const MarketContainer = styled('div')({
@@ -68,7 +71,7 @@ const Market: React.FC = () => {
   const classes = useStyles();
   return (
     <MarketContainer>
-      <TableContainer component={Paper}>
+      <TableContainer component={Paper} className={classes.tableContainer}>
         <Table className={classes.table} aria-label="customized table">
           <TableHead>
             <TableRow>

@@ -1,12 +1,12 @@
 import React from 'react';
-import { NavBar, BalanceAccountContainer, Market } from '../../components';
+import { BalanceAccountContainer, Market } from '../../components';
+import IPage from '../../interfaces/page';
 
-const Home: React.FC = () => (
+const HomePage: React.FC<IPage> = () => (
   <>
-    <NavBar />
     <BalanceAccountContainer />
     <Market />
   </>
 );
 
-export default Home;
+export default HomePage;
