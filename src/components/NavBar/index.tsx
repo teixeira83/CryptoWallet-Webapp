@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { AppBar, Toolbar, SwipeableDrawer, Button } from '@material-ui/core';
-import { AccountBalanceWallet, AccountCircle } from '@material-ui/icons';
+import { AccountCircle } from '@material-ui/icons';
 import { styled, makeStyles } from '@material-ui/core/styles';
 import { Link, withRouter } from 'react-router-dom';
+import cryptoLogo from '../../assets/imgs/logo.png';
 
 const useStyles = makeStyles({
   toolbar: {
@@ -15,6 +16,10 @@ const useStyles = makeStyles({
     width: '80%',
     margin: '10px auto',
     textDecoration: 'none',
+  },
+  imgStyle: {
+    width: '120px',
+    height: '50px',
   },
 });
 
@@ -38,8 +43,12 @@ const NavBar: React.FC = () => {
     <header>
       <AppBar position="static" style={{ background: '#292D3B' }}>
         <Toolbar className={classes.toolbar}>
+          <img
+            src={cryptoLogo}
+            alt="Logo da Crypto Wallet"
+            className={classes.imgStyle}
+          />
           <AccountCircle fontSize="large" onClick={handleClick} />
-          <AccountBalanceWallet fontSize="large" />
         </Toolbar>
       </AppBar>
       {drawerIsOpen ? (
