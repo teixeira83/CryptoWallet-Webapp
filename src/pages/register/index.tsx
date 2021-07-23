@@ -53,7 +53,7 @@ const RegisterPage: React.FC<IPage> = () => {
       <FormGroup className={classes.formInput}>
         <TextField
           type="email"
-          id="emnail"
+          id="email"
           name="email"
           placeholder="Email"
           onChange={(event) => setEmail(event.target.value)}
