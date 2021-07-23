@@ -33,7 +33,7 @@ const DrawerContainer = styled('div')({
 
 const NavBar: React.FC = () => {
   const classes = useStyles();
-  const [drawerIsOpen, setDrawerIsOpen] = useState(false);
+  const [drawerIsOpen, setDrawerIsOpen] = useState<boolean>(false);
 
   const handleClick: any = () => {
     setDrawerIsOpen(!drawerIsOpen);
