@@ -2,14 +2,19 @@ import React, { useState } from 'react';
 import { AppBar, Toolbar, SwipeableDrawer, Button } from '@material-ui/core';
 import { AccountBalanceWallet, AccountCircle } from '@material-ui/icons';
 import { styled, makeStyles } from '@material-ui/core/styles';
+import { Link, withRouter } from 'react-router-dom';
 
 const useStyles = makeStyles({
   toolbar: {
     justifyContent: 'space-between',
   },
   drawerBtn: {
+    width: '100%',
+  },
+  linkStyle: {
     width: '80%',
     margin: '10px auto',
+    textDecoration: 'none',
   },
 });
 
@@ -45,12 +50,16 @@ const NavBar: React.FC = () => {
           onOpen={handleClick}
         >
           <DrawerContainer>
-            <Button className={classes.drawerBtn} variant="contained">
-              Entrar
-            </Button>
-            <Button className={classes.drawerBtn} variant="contained">
-              Registrar
-            </Button>
+            <Link to="/login" className={classes.linkStyle}>
+              <Button variant="contained" className={classes.drawerBtn}>
+                Entrar
+              </Button>
+            </Link>
+            <Link to="/register" className={classes.linkStyle}>
+              <Button variant="contained" className={classes.drawerBtn}>
+                Registrar
+              </Button>
+            </Link>
           </DrawerContainer>
         </SwipeableDrawer>
       ) : null}
@@ -58,4 +67,4 @@ const NavBar: React.FC = () => {
   );
 };
 
-export default NavBar;
+export default withRouter(NavBar);

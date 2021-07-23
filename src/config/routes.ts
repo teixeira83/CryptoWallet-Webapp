@@ -1,5 +1,6 @@
 import IRoute from '../interfaces/route';
 import { HomePage, LoginPage } from '../pages';
+import RegisterPage from '../pages/register';
 
 const routes: IRoute[] = [
   {
@@ -12,6 +13,12 @@ const routes: IRoute[] = [
     path: '/login',
     name: 'Login Page',
     component: LoginPage,
+    exact: true,
+  },
+  {
+    path: '/register',
+    name: 'Register Page',
+    component: RegisterPage,
     exact: true,
   },
 ];
