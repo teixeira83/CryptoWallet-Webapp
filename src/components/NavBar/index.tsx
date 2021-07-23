@@ -59,12 +59,20 @@ const NavBar: React.FC = () => {
           onOpen={handleClick}
         >
           <DrawerContainer>
-            <Link to="/login" className={classes.linkStyle}>
+            <Link
+              to="/login"
+              className={classes.linkStyle}
+              onClick={() => setDrawerIsOpen(!drawerIsOpen)}
+            >
               <Button variant="contained" className={classes.drawerBtn}>
                 Entrar
               </Button>
             </Link>
-            <Link to="/register" className={classes.linkStyle}>
+            <Link
+              to="/register"
+              className={classes.linkStyle}
+              onClick={() => setDrawerIsOpen(!drawerIsOpen)}
+            >
               <Button variant="contained" className={classes.drawerBtn}>
                 Registrar
               </Button>
