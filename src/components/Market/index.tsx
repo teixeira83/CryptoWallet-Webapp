@@ -60,21 +60,23 @@ const Wrapper = styled('div')({
 });
 
 const Market: React.FC = () => {
-  const [dollarQuotation, setDollarQutation] = useState<number>(0.0);
+  const [dollarQuotation, setDollarQuotation] = useState<number>(0.0);
   const [coinsQuotation, setCoinsQuotations] = useState<any[]>([]);
   const classes = useStyles();
   useEffect(() => {
     const responsedDollarQuotation = getDollarQuotation();
     responsedDollarQuotation.then((quotation: number) => {
-      setDollarQutation(quotation);
+      setDollarQuotation(quotation);
+      sessionStorage.setItem('dollar_quotation', String(quotation));
     });
   }, []);
 
   useEffect(() => {
     (async () => {
       const cryptoResponse = await getCryptoQuotation(coins);
-      Promise.all(cryptoResponse).then((values) => {
+      Promise.all(cryptoResponse).then((values: any) => {
         setCoinsQuotations(values);
+        sessionStorage.setItem('btc_quotation', String(values[0].price));
       });
     })();
   }, []);

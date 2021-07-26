@@ -5,6 +5,7 @@ import { makeStyles } from '@material-ui/styles';
 import { AuthContainer } from '../../components';
 import IPage from '../../interfaces/page';
 import { auth } from '../../config/firebase';
+import { User } from '../../models/User';
 
 const useStyles = makeStyles({
   formInput: {
@@ -15,6 +16,14 @@ const useStyles = makeStyles({
     margin: '20px auto',
   },
 });
+
+const saveUserInSessionStorage = (user: User): any => {
+  sessionStorage.setItem('user_id', user.getUserId());
+  sessionStorage.setItem('user_brl', String(user.getBRLBalance()));
+  sessionStorage.setItem('user_btc', String(user.getBTCBalance()));
+  sessionStorage.setItem('user_brita', String(user.getBritaBalance()));
+  sessionStorage.setItem('user_email', user.getEmail());
+};
 
 const LoginPage: React.FC<IPage> = () => {
   const classes = useStyles();
@@ -33,7 +42,11 @@ const LoginPage: React.FC<IPage> = () => {
     auth
       .signInWithEmailAndPassword(email, password)
       .then((response) => {
-        console.log(response);
+        const userResponse = response.user;
+        const userID = String(userResponse?.uid);
+
+        const user = new User(userID, email);
+        saveUserInSessionStorage(user);
         history.push('/');
         setAuthenticating(!authenticating);
       })
@@ -70,7 +83,6 @@ const LoginPage: React.FC<IPage> = () => {
           variant="outlined"
         />
       </FormGroup>
-      {/* {registering ? <span style={{ color: 'red' }}>{error}</span> : null} */}
       <Button
         variant="contained"
         color="primary"

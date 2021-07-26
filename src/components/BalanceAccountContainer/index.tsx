@@ -4,7 +4,7 @@ import { Button } from '@material-ui/core';
 import AddIcon from '@material-ui/icons/Add';
 
 const BalanceContainer = styled('div')({
-  height: '30vh',
+  height: '45vh',
   width: '85%',
   backgroundColor: '#323748',
   margin: '20px auto',
@@ -15,8 +15,8 @@ const BalanceContainer = styled('div')({
   color: '#ffffff',
 });
 
-const BTCBalance = styled('span')({
-  fontSize: '38px',
+const CryptoBalance = styled('span')({
+  fontSize: '28px',
 });
 
 const BRLBalance = styled('span')({
@@ -31,9 +31,11 @@ const TransferButtonsContainer = styled('div')({
 
 const BalanceAccountContainer: React.FC = () => (
   <BalanceContainer>
+    <h4>{sessionStorage.getItem('user_email')}</h4>
     <h3>Total Balance</h3>
-    <BTCBalance>0.0014568 BTC</BTCBalance>
-    <BRLBalance>R$100.000,00</BRLBalance>
+    <CryptoBalance>BTC: {sessionStorage.getItem('user_btc')}</CryptoBalance>
+    <CryptoBalance>Brita: {sessionStorage.getItem('user_brita')}</CryptoBalance>
+    <BRLBalance>R${sessionStorage.getItem('user_brl')}</BRLBalance>
     <TransferButtonsContainer>
       <Button
         variant="contained"

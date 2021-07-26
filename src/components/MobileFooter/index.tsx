@@ -44,13 +44,15 @@ const MobileFooter: React.FC = () => {
           className={classes.iconStyle}
         />
       </Link>
-      <BottomNavigationAction
-        label="Transaction"
-        value="transaction"
-        icon={<MonetizationOn />}
-        showLabel
-        className={classes.iconStyle}
-      />
+      <Link to="/transaction">
+        <BottomNavigationAction
+          label="Transaction"
+          value="transaction"
+          icon={<MonetizationOn />}
+          showLabel
+          className={classes.iconStyle}
+        />
+      </Link>
       <Link to="/wallet">
         <BottomNavigationAction
           label="Wallet"
