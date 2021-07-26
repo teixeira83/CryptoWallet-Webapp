@@ -35,13 +35,15 @@ const MobileFooter: React.FC = () => {
           className={classes.iconStyle}
         />
       </Link>
-      <BottomNavigationAction
-        label="Market"
-        value="market"
-        icon={<Assessment />}
-        showLabel
-        className={classes.iconStyle}
-      />
+      <Link to="/market">
+        <BottomNavigationAction
+          label="Market"
+          value="market"
+          icon={<Assessment />}
+          showLabel
+          className={classes.iconStyle}
+        />
+      </Link>
       <BottomNavigationAction
         label="Transaction"
         value="transaction"
@@ -49,13 +51,15 @@ const MobileFooter: React.FC = () => {
         showLabel
         className={classes.iconStyle}
       />
-      <BottomNavigationAction
-        label="Wallet"
-        value="wallet"
-        icon={<AccountBalanceWallet />}
-        showLabel
-        className={classes.iconStyle}
-      />
+      <Link to="/wallet">
+        <BottomNavigationAction
+          label="Wallet"
+          value="wallet"
+          icon={<AccountBalanceWallet />}
+          showLabel
+          className={classes.iconStyle}
+        />
+      </Link>
     </BottomNavigation>
   );
 };

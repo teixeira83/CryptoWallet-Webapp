@@ -1,5 +1,5 @@
 import IRoute from '../interfaces/route';
-import { HomePage, LoginPage } from '../pages';
+import { HomePage, LoginPage, MarketPage, WalletPage } from '../pages';
 import RegisterPage from '../pages/register';
 
 const routes: IRoute[] = [
@@ -19,6 +19,18 @@ const routes: IRoute[] = [
     path: '/register',
     name: 'Register Page',
     component: RegisterPage,
+    exact: true,
+  },
+  {
+    path: '/market',
+    name: 'Market Page',
+    component: MarketPage,
+    exact: true,
+  },
+  {
+    path: '/wallet',
+    name: 'Wallet Page',
+    component: WalletPage,
     exact: true,
   },
 ];

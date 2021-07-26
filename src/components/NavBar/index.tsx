@@ -64,7 +64,11 @@ const NavBar: React.FC = () => {
               className={classes.linkStyle}
               onClick={() => setDrawerIsOpen(!drawerIsOpen)}
             >
-              <Button variant="contained" className={classes.drawerBtn}>
+              <Button
+                variant="contained"
+                className={classes.drawerBtn}
+                style={{ backgroundColor: '#ffd616' }}
+              >
                 Entrar
               </Button>
             </Link>
