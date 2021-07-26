@@ -5,7 +5,7 @@ import AddIcon from '@material-ui/icons/Add';
 
 const BalanceContainer = styled('div')({
   height: '30vh',
-  width: '80%',
+  width: '85%',
   backgroundColor: '#323748',
   margin: '20px auto',
   borderRadius: '25px',

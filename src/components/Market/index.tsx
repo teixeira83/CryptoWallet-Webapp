@@ -16,6 +16,7 @@ import {
   Paper,
 } from '@material-ui/core';
 import getDollarQuotation from '../../api/bancoCentral';
+import getCryptoQuotation from '../../api/mercadoBitcoin';
 
 const StyledTableCell = withStyles(() =>
   createStyles({
@@ -39,76 +40,81 @@ const StyledTableRow = withStyles((theme: Theme) =>
   })
 )(TableRow);
 
-const createData: any = (pair: string, price: number, variation: number) => ({
-  pair,
-  price,
-  variation,
-});
-
-const rows = [
-  createData('BTC/BRL', 200, 6.0),
-  createData('ETH/BRL', 237, 9.0),
-  createData('ETC/BRL', 262, 16.0),
-  createData('XMR/BRL', 305, 3.7),
-  createData('DOGE/BRL', 356, 16.0),
-];
+const coins = ['BTC', 'ETH', 'CHZ', 'JUVFT', 'BAT'];
 
 const useStyles = makeStyles({
   table: {
     width: '95%',
     margin: '10px auto',
   },
-  tableContainer: {
-    marginBottom: '80px',
-  },
 });
 
 const MarketContainer = styled('div')({
   width: '80%',
   margin: '50px auto',
+  display: 'flex',
+});
+
+const Wrapper = styled('div')({
+  height: '2em',
 });
 
 const Market: React.FC = () => {
   const [dollarQuotation, setDollarQutation] = useState<number>(0.0);
+  const [coinsQuotation, setCoinsQuotations] = useState<any[]>([]);
   const classes = useStyles();
   useEffect(() => {
     const responsedDollarQuotation = getDollarQuotation();
     responsedDollarQuotation.then((quotation: number) => {
       setDollarQutation(quotation);
     });
-  }, [dollarQuotation]);
+  }, []);
+
+  useEffect(() => {
+    (async () => {
+      const cryptoResponse = await getCryptoQuotation(coins);
+      Promise.all(cryptoResponse).then((values) => {
+        setCoinsQuotations(values);
+      });
+    })();
+  }, []);
 
   return (
-    <MarketContainer>
-      <TableContainer component={Paper} className={classes.tableContainer}>
-        <Table className={classes.table} aria-label="customized table">
-          <TableHead>
-            <TableRow>
-              <StyledTableCell>Par</StyledTableCell>
-              <StyledTableCell align="right">Último Preço</StyledTableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            <StyledTableRow>
-              <StyledTableCell component="th" scope="row">
-                USD/BRL
-              </StyledTableCell>
-              <StyledTableCell align="right">
-                {dollarQuotation.toPrecision(3)}
-              </StyledTableCell>
-            </StyledTableRow>
-            {rows.map((row) => (
-              <StyledTableRow key={row.pair}>
+    <>
+      <MarketContainer>
+        <TableContainer component={Paper}>
+          <Table className={classes.table} aria-label="customized table">
+            <TableHead>
+              <TableRow>
+                <StyledTableCell>Par</StyledTableCell>
+                <StyledTableCell align="right">Último Preço</StyledTableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              <StyledTableRow>
                 <StyledTableCell component="th" scope="row">
-                  {row.pair}
+                  USD/BRL
                 </StyledTableCell>
-                <StyledTableCell align="right">{row.price}</StyledTableCell>
+                <StyledTableCell align="right">
+                  {`R$${parseFloat(dollarQuotation.toFixed(2))}`}
+                </StyledTableCell>
               </StyledTableRow>
-            ))}
-          </TableBody>
-        </Table>
-      </TableContainer>
-    </MarketContainer>
+              {coinsQuotation.map((c: any) => (
+                <StyledTableRow key={c.coin}>
+                  <StyledTableCell component="th" scope="coins">
+                    {`${c.coin}/BRL`}
+                  </StyledTableCell>
+                  <StyledTableCell align="right">
+                    {`R$${parseFloat(c.price).toFixed(2)}`}
+                  </StyledTableCell>
+                </StyledTableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </TableContainer>
+      </MarketContainer>
+      <Wrapper />
+    </>
   );
 };
 
