@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   styled,
   withStyles,
@@ -15,6 +15,7 @@ import {
   TableRow,
   Paper,
 } from '@material-ui/core';
+import getDollarQuotation from '../../api/bancoCentral';
 
 const StyledTableCell = withStyles(() =>
   createStyles({
@@ -68,7 +69,15 @@ const MarketContainer = styled('div')({
 });
 
 const Market: React.FC = () => {
+  const [dollarQuotation, setDollarQutation] = useState<number>(0.0);
   const classes = useStyles();
+  useEffect(() => {
+    const responsedDollarQuotation = getDollarQuotation();
+    responsedDollarQuotation.then((quotation: number) => {
+      setDollarQutation(quotation);
+    });
+  }, [dollarQuotation]);
+
   return (
     <MarketContainer>
       <TableContainer component={Paper} className={classes.tableContainer}>
@@ -77,17 +86,23 @@ const Market: React.FC = () => {
             <TableRow>
               <StyledTableCell>Par</StyledTableCell>
               <StyledTableCell align="right">Último Preço</StyledTableCell>
-              <StyledTableCell align="right">Var% em 24h</StyledTableCell>
             </TableRow>
           </TableHead>
           <TableBody>
+            <StyledTableRow>
+              <StyledTableCell component="th" scope="row">
+                USD/BRL
+              </StyledTableCell>
+              <StyledTableCell align="right">
+                {dollarQuotation.toPrecision(3)}
+              </StyledTableCell>
+            </StyledTableRow>
             {rows.map((row) => (
               <StyledTableRow key={row.pair}>
                 <StyledTableCell component="th" scope="row">
                   {row.pair}
                 </StyledTableCell>
                 <StyledTableCell align="right">{row.price}</StyledTableCell>
-                <StyledTableCell align="right">{row.variation}</StyledTableCell>
               </StyledTableRow>
             ))}
           </TableBody>
