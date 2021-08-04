@@ -1,7 +1,6 @@
 ## Crypto Wallet App
-<<<<<<< HEAD
 Este projeto foi realizado como challenge para @bitspace-solutions e para o aprendizado. 
-=======
+
 
 Este projeto foi realizado com React + TypeScript + Firebase
 
@@ -43,4 +42,4 @@ yarn start
 <img height="150em" align="center" src="https://github.com/teixeira83/CryptoWallet-Webapp/edit/main/src/assets/imgs/1.png">
 <img height="150em" align="center" src="https://github.com/teixeira83/CryptoWallet-Webapp/edit/main/src/assets/imgs/2.png">
 <img height="150em" align="center" src="https://github.com/teixeira83/CryptoWallet-Webapp/edit/main/src/assets/imgs/3.png">
->>>>>>> fbf8aa2a8804d7ec7782c5f70ee396cf1025e72a
+
