@@ -1,46 +1,161 @@
-# Getting Started with Create React App
+## Crypto Wallet App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este projeto foi realizado com React + TypeScript + Firebase
 
-## Available Scripts
+## Instalação
 
-In the project directory, you can run:
+Clone o repositório, entre na pasta raiz e rode o comando:
 
-### `npm start`
+```bash
+npm install
+# ou
+yarn install
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Também é necessário configurar as variáveis de ambiente criando o arquivo .env na pasta raiz e preenchendo de maneira semelhante ao .env-example que está neste repositório:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+```bash
+REACT_APP_FIREBASE_API_KEY=
+REACT_APP_FIREBASE_AUTH_DOMAIN=
+REACT_APP_FIREBASE_PROJECT_ID=
+REACT_APP_FIREBASE_STORAGE_BUCKET=
+REACT_APP_FIREBASE_SENDER_ID=
+REACT_APP_FIREBASE_APP_ID=
+REACT_APP_BC_API_URL=https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarDia(dataCotacao=@dataCotacao)?@dataCotacao=
+REACT_APP_MERCADOBTC_API_URL=https://www.mercadobitcoin.net/api/
+```
 
-### `npm test`
+## Como Utilizar
+Depois da instalação entre na pasta raiz e rode o comando:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+```bash
+npm start
+# ou
+yarn start
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Telas do App
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Crypto Wallet App
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Este projeto foi realizado com React + TypeScript + Firebase
 
-### `npm run eject`
+## Instalação
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Clone o repositório, entre na pasta raiz e rode o comando:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+npm install
+# ou
+yarn install
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Também é necessário configurar as variáveis de ambiente criando o arquivo .env na pasta raiz e preenchendo de maneira semelhante ao .env-example que está neste repositório:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```bash
+REACT_APP_FIREBASE_API_KEY=
+REACT_APP_FIREBASE_AUTH_DOMAIN=
+REACT_APP_FIREBASE_PROJECT_ID=
+REACT_APP_FIREBASE_STORAGE_BUCKET=
+REACT_APP_FIREBASE_SENDER_ID=
+REACT_APP_FIREBASE_APP_ID=
+REACT_APP_BC_API_URL=https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarDia(dataCotacao=@dataCotacao)?@dataCotacao=
+REACT_APP_MERCADOBTC_API_URL=https://www.mercadobitcoin.net/api/
+```
 
-## Learn More
+## Como Utilizar
+Depois da instalação entre na pasta raiz e rode o comando:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+npm start
+# ou
+yarn start
+```
+
+## Telas do App
+
+<img height="150em" align="center" src="https://github.com/teixeira83/CryptoWallet-Webapp/edit/main/src/assets/imgs/1.png">
+## Crypto Wallet App
+
+Este projeto foi realizado com React + TypeScript + Firebase
+
+## Instalação
+
+Clone o repositório, entre na pasta raiz e rode o comando:
+
+```bash
+npm install
+# ou
+yarn install
+```
+
+Também é necessário configurar as variáveis de ambiente criando o arquivo .env na pasta raiz e preenchendo de maneira semelhante ao .env-example que está neste repositório:
+
+```bash
+REACT_APP_FIREBASE_API_KEY=
+REACT_APP_FIREBASE_AUTH_DOMAIN=
+REACT_APP_FIREBASE_PROJECT_ID=
+REACT_APP_FIREBASE_STORAGE_BUCKET=
+REACT_APP_FIREBASE_SENDER_ID=
+REACT_APP_FIREBASE_APP_ID=
+REACT_APP_BC_API_URL=https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarDia(dataCotacao=@dataCotacao)?@dataCotacao=
+REACT_APP_MERCADOBTC_API_URL=https://www.mercadobitcoin.net/api/
+```
+
+## Como Utilizar
+Depois da instalação entre na pasta raiz e rode o comando:
+
+
+```bash
+npm start
+# ou
+yarn start
+```
+
+## Telas do App
+
+<img height="150em" align="center" src="https://github.com/teixeira83/CryptoWallet-Webapp/edit/main/src/assets/imgs/1.png">
+## Crypto Wallet App
+
+Este projeto foi realizado com React + TypeScript + Firebase
+
+## Instalação
+
+Clone o repositório, entre na pasta raiz e rode o comando:
+
+```bash
+npm install
+# ou
+yarn install
+```
+
+Também é necessário configurar as variáveis de ambiente criando o arquivo .env na pasta raiz e preenchendo de maneira semelhante ao .env-example que está neste repositório:
+
+```bash
+REACT_APP_FIREBASE_API_KEY=
+REACT_APP_FIREBASE_AUTH_DOMAIN=
+REACT_APP_FIREBASE_PROJECT_ID=
+REACT_APP_FIREBASE_STORAGE_BUCKET=
+REACT_APP_FIREBASE_SENDER_ID=
+REACT_APP_FIREBASE_APP_ID=
+REACT_APP_BC_API_URL=https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarDia(dataCotacao=@dataCotacao)?@dataCotacao=
+REACT_APP_MERCADOBTC_API_URL=https://www.mercadobitcoin.net/api/
+```
+
+## Como Utilizar
+Depois da instalação entre na pasta raiz e rode o comando:
+
+
+```bash
+npm start
+# ou
+yarn start
+```
+
+## Telas do App
+
+<img height="150em" align="center" src="https://github.com/teixeira83/CryptoWallet-Webapp/edit/main/src/assets/imgs/1.png">
+<img height="150em" align="center" src="https://github.com/teixeira83/CryptoWallet-Webapp/edit/main/src/assets/imgs/2.png">
+<img height="150em" align="center" src="https://github.com/teixeira83/CryptoWallet-Webapp/edit/main/src/assets/imgs/3.png">
