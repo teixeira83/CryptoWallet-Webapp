@@ -39,7 +39,7 @@ yarn start
 
 ## Telas do App
 
-<img height="150em" align="center" src="https://github.com/teixeira83/CryptoWallet-Webapp/blob/main/src/assets/imgs/1.png">
-<img height="150em" align="center" src="https://github.com/teixeira83/CryptoWallet-Webapp/blob/main/src/assets/imgs/2.png">
-<img height="150em" align="center" src="https://github.com/teixeira83/CryptoWallet-Webapp/blob/main/src/assets/imgs/3.png">
+<img height="400em" align="center" src="https://github.com/teixeira83/CryptoWallet-Webapp/blob/main/src/assets/imgs/1.png">
+<img height="400em" align="center" src="https://github.com/teixeira83/CryptoWallet-Webapp/blob/main/src/assets/imgs/2.png">
+<img height="400em" align="center" src="https://github.com/teixeira83/CryptoWallet-Webapp/blob/main/src/assets/imgs/3.png">
 
